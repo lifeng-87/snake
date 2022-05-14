@@ -5,4 +5,4 @@
 2. 撞到邊緣或自己遊戲會結束
 3. 地圖上會隨機顯示蘋果，吃到一顆蘋果可以加一分同時身體長度會加一
 ## 遊玩網址
-[主頁](https://lifeng-87.github.io/snake/)
+[主頁](https://lifeng-87.github.io/snake/index.html)
