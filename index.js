@@ -1,4 +1,4 @@
-const BLOCK_SIZE = 20;
+const BLOCK_SIZE = 30;
 const BLOCK_COUNT = 20;
 
 var gameInterval;
@@ -11,6 +11,12 @@ var control;
 window.onload = onPageLoaded;
 
 function onPageLoaded() {
+	var canvas = document.getElementById("canvas_id");
+	var ctx = canvas.getContext("2d");
+
+	ctx.fillStyle = "green";
+	ctx.fillRect(0, 0, canvas.width, canvas.height);
+
 	document.addEventListener("keydown", handleKeyDown);
 }
 
@@ -74,11 +80,11 @@ function updateCanvas() {
 	var canvas = document.getElementById("canvas_id");
 	var ctx = canvas.getContext("2d");
 
-	ctx.fillStyle = "black";
+	ctx.fillStyle = "green";
 	ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-	ctx.fillStyle = "lime";
 	for (var i = 0; i < snake.body.length; i++) {
+		ctx.fillStyle = "lime";
 		ctx.fillRect(
 			snake.body[i].x * BLOCK_SIZE,
 			snake.body[i].y * BLOCK_SIZE,
@@ -139,6 +145,7 @@ function snakeIsDead() {
 
 function gameOver() {
 	clearInterval(gameInterval);
+	alert("Game Over");
 }
 
 function putApple() {
